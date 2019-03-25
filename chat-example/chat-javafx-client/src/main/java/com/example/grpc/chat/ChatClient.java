@@ -63,28 +63,10 @@ public class ChatClient extends Application {
 
     primaryStage.show();
 
-    ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 9090).usePlaintext(true).build();
-    ChatServiceGrpc.ChatServiceStub chatService = ChatServiceGrpc.newStub(channel);
-    StreamObserver<Chat.ChatMessage> chat = chatService.chat(new StreamObserver<Chat.ChatMessageFromServer>() {
-      @Override
-      public void onNext(Chat.ChatMessageFromServer value) {
-        Platform.runLater(() -> {
-          messages.add(value.getMessage().getFrom() + ": " + value.getMessage().getMessage());
-          messagesView.scrollTo(messages.size());
-        });
-      }
-
-      @Override
-      public void onError(Throwable t) {
-        t.printStackTrace();
-        System.out.println("Disconnected");
-      }
-
-      @Override
-      public void onCompleted() {
-        System.out.println("Disconnected");
-      }
-    });
+    // 1. start the channel to talk to the server
+    // 2. create a new ChatServiceStub
+    // 3. implement client side chat() and pass in observer
+    // 4. implement onNext, onError, and onComplete in the observer
 
     send.setOnAction(e -> {
       chat.onNext(Chat.ChatMessage.newBuilder().setFrom(name.getText()).setMessage(message.getText()).build());
