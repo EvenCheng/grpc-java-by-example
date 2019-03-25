@@ -19,4 +19,4 @@
 //    including: string, int32/int64, array (repeated), map and an enum
 // 2. create a enum of your choice, and back fill into #1
 // 3. create a response message called HelloResponse with a string type
-// 4. create the GreetingService
+// 4. create the GreetingService, with an rpc called greet() takes in the HelloRequest and returns HelloResponse

@@ -23,6 +23,11 @@ import java.io.IOException;
  */
 public class MyGrpcServer {
   static public void main(String [] args) throws IOException, InterruptedException {
-    // implement me
+    // 1. create the server
+    // 2. start the server
+    // 3. hold the server so it's not terminating
   }
+
+  // 4. implment greet() in GreetingService
+  // 5. complete the response
 }

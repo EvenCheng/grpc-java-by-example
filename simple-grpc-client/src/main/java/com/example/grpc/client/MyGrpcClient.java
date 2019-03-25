@@ -21,6 +21,9 @@ package com.example.grpc.client;
  */
 public class MyGrpcClient {
   public static void main(String[] args) throws InterruptedException {
-    // implement me
+    // 1. create a channel to talk to the server we just built
+    // 2. create a blocking stub on the channel
+    // 3. call greet() and retrieve result from HelloResponse
+    // 4. shutdown the channel
   }
 }
